@@ -9,8 +9,10 @@ import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.content.res.AppCompatResources
 import com.example.parktikom_admin.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
 
         mAuth = Firebase.auth
@@ -39,8 +42,6 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.password.text.toString()
             login(username, password)
         }
-
-
     }
 
     override fun onStart() {
@@ -52,16 +53,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String){
+        binding.progressBarLogin.visibility = View.VISIBLE
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithEmail:success")
                     val user = mAuth.currentUser
+                    binding.progressBarLogin.visibility = View.GONE
+                    binding.username.text.clear()
+                    binding.password.text.clear()
                     goHome(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    binding.progressBarLogin.visibility = View.GONE
+                    binding.password.text.clear()
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                 }

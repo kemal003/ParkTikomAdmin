@@ -42,6 +42,7 @@ class HomeActivity : AppCompatActivity() {
         binding.buatPengumuman.setOnClickListener{
             val buatPengumuman = Intent(this, BuatPengumuman::class.java)
             startActivity(buatPengumuman)
+            this.finish()
         }
     }
 

@@ -1,18 +1,16 @@
 package com.example.parktikom_admin
 
-import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
-import android.widget.AdapterView
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.FileProvider
@@ -21,7 +19,6 @@ import com.example.parktikom_admin.databinding.ActivityBuatPengumumanBinding
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import java.io.File
@@ -51,6 +48,8 @@ class BuatPengumuman : AppCompatActivity() {
         pengumumanArrayList = arrayListOf()
 
         getListPengumuman()
+        binding.judulPengumuman.addTextChangedListener(textWatcher)
+        binding.isiPengumuman.addTextChangedListener(textWatcher)
 
         autoCompleteTextView = binding.autoCompleteTextView
         adapterItem = ArrayAdapter<String>(this, R.layout.item_parkir, testParkir)
@@ -75,11 +74,15 @@ class BuatPengumuman : AppCompatActivity() {
                 this,
                 "${this.packageName}.provider",
                 takenImage())
-
-            takePhoto.launch(urlFoto)
+            try {
+                takePhoto.launch(urlFoto)
+            }catch (e: Exception){
+                Toast.makeText(this, "Batal mengambil foto", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.buatPengumuman.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
             fotoPengumumanRef = storageRef.child("images/pengumuman/${urlFoto.lastPathSegment}")
             databaseRef = Firebase.database.getReference("Pengumuman")
             val judulPengumuman = binding.judulPengumuman.text.toString()
@@ -90,7 +93,7 @@ class BuatPengumuman : AppCompatActivity() {
             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
             val formattedDate = currentDate.format(formatter)
 
-            val newId = pengumumanArrayList.size
+            val newId = pengumumanArrayList.size + 1
 
             var uploadedFotoUri : Uri?
             uploadTask.continueWithTask { task ->
@@ -111,6 +114,10 @@ class BuatPengumuman : AppCompatActivity() {
                         newId)
                     databaseRef.child("$newId").setValue(pengumumanBaru).addOnSuccessListener {
                         Toast.makeText(this, "Pengumuman berhasil dibuat", Toast.LENGTH_SHORT).show()
+                        binding.progressBar.visibility = View.GONE
+                        val home = Intent(this, HomeActivity::class.java)
+                        startActivity(home)
+                        this.finish()
                     }
                 }
             }
@@ -135,10 +142,36 @@ class BuatPengumuman : AppCompatActivity() {
         })
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val home = Intent(this, HomeActivity::class.java)
+        startActivity(home)
+        this.finish()
+    }
+
     private fun takenImage() : File{
         return File.createTempFile(
             "IMG_",
             ".jpg",
             getExternalFilesDir(Environment.DIRECTORY_PICTURES))
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            val usernameInput = binding.judulPengumuman.text.isEmpty()
+            val passwordInput = binding.isiPengumuman.text.toString().isEmpty()
+
+            if (!usernameInput && !passwordInput){
+                binding.unggahFoto.isEnabled = true
+            }
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+
+        }
     }
 }

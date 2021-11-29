@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ParkTikom</string>
+    <string name="app_name">ParkTikom - Admin</string>
     <string name="informasi_lokasi_parkir_selama_pkk_maba_filkom_ub">Informasi Lokasi Parkir selama PKK-MABA FILKOM UB</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
