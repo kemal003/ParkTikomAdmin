@@ -1,0 +1,9 @@
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Item Parkir"
+    android:fontFamily="@font/poppins_semibold"
+    android:padding="16dp"
+    android:textColor="@color/blue"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+</TextView>

@@ -1,5 +1,6 @@
 package com.example.parktikom_admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.content.res.AppCompatResources
@@ -36,6 +37,10 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        binding.buatPengumuman.setOnClickListener{
+            val buatPengumuman = Intent(this, BuatPengumuman::class.java)
+            startActivity(buatPengumuman)
+        }
     }
 
     private fun logOut() {

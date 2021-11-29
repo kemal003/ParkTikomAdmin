@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkTikomAdmin">
         <activity
+            android:name=".BuatPengumuman"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
