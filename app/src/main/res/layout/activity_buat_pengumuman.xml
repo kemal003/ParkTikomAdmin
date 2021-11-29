@@ -110,6 +110,13 @@
                     android:text="Unggah Foto"
                     android:textColor="@color/white" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/takenPhoto"
+                    android:src="@drawable/ic_baseline_broken_image_24"/>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
