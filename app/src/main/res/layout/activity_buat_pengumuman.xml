@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue001"
     tools:context=".BuatPengumuman">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginBottom="1dp"
-                android:padding="30dp"
+                android:padding="15dp"
                 android:orientation="vertical"
                 android:background="@color/blue001"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +43,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:boxBackgroundColor="@color/white"
+                    android:background="@drawable/rounded_shadow"
                     android:hint="Pilih Lokasi Parkir">
 
                     <AutoCompleteTextView
@@ -72,13 +70,13 @@
                     android:layout_height="wrap_content"
                     android:hint="Masukkan Judul Pengumuman"
                     android:layout_marginTop="10dp"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:singleLine="true"
                     android:scrollbarStyle="insideInset"
                     android:scrollbars="horizontal"
                     android:background="@drawable/rounded_shadow"
                     android:fontFamily="@font/poppins_regular"
-                    android:textSize="16sp"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -107,15 +105,21 @@
                     android:id="@+id/unggahFoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:text="Unggah Foto"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppins_regular"
                     android:enabled="false"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:background="@drawable/gradient"/>
+
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rounded_shadow"
                     android:id="@+id/takenPhoto"
                     android:src="@drawable/ic_baseline_broken_image_24"/>
 
@@ -125,21 +129,18 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"/>
 
-                <Button
+                <ImageView
                     android:id="@+id/buatPengumuman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="30dp"
-                    android:backgroundTint="@color/blue004"
-                    android:text="POST PENGUMUMAN"
-                    android:textColor="@color/white"/>
+                    android:src="@drawable/ic_buttonunggah"/>
 
 
             </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
     </ScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

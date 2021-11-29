@@ -33,7 +33,7 @@
             android:text="Deskripsi :"
             android:textAlignment="textStart"
             android:textColor="@color/blue003"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
