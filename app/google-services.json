@@ -1,0 +1,109 @@
+{
+  "project_info": {
+    "project_number": "328405604706",
+    "firebase_url": "https://park-tikom-4b85d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "park-tikom-4b85d",
+    "storage_bucket": "park-tikom-4b85d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328405604706:android:9d076697ca0702e326343b",
+        "android_client_info": {
+          "package_name": "com.example.park_tikom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328405604706-6jefni36395135tr483tnhdrkq84p2r1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.park_tikom",
+            "certificate_hash": "e1fa759439fe9e4b41a6385237191665911b2655"
+          }
+        },
+        {
+          "client_id": "328405604706-72617ma8ql441ethohs15hj0rfp2ppgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.park_tikom",
+            "certificate_hash": "1946d651fdf721350a96b18e57cf4b7aed90b262"
+          }
+        },
+        {
+          "client_id": "328405604706-crp9fn00qdl6ivvpg5qcqoo3gh8dellr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.park_tikom",
+            "certificate_hash": "94c155fcab700bd55c9719aee7532d21b049503e"
+          }
+        },
+        {
+          "client_id": "328405604706-on5u2998n78i1lf7skbkqdepo53ot6ud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.park_tikom",
+            "certificate_hash": "fe122003709d3122d88a3d317a9c8c19d3d98fef"
+          }
+        },
+        {
+          "client_id": "328405604706-n43pq4vj9ddfn26fano26ejckeha1v4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA67dLVTIgC2gqFlAnHN4sgqlC2TfxbgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328405604706-n43pq4vj9ddfn26fano26ejckeha1v4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328405604706:android:47dacf2ef67540fd26343b",
+        "android_client_info": {
+          "package_name": "com.example.parktikom_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328405604706-9pf6p660kkfjuussti4o0tjtm2lhoq9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parktikom_admin",
+            "certificate_hash": "94c155fcab700bd55c9719aee7532d21b049503e"
+          }
+        },
+        {
+          "client_id": "328405604706-n43pq4vj9ddfn26fano26ejckeha1v4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA67dLVTIgC2gqFlAnHN4sgqlC2TfxbgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328405604706-n43pq4vj9ddfn26fano26ejckeha1v4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
