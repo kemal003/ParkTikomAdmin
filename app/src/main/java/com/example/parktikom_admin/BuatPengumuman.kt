@@ -18,19 +18,24 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.example.parktikom_admin.databinding.ActivityBuatPengumumanBinding
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import java.io.File
 import java.lang.Exception
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class BuatPengumuman : AppCompatActivity() {
-    val REQUEST_IMAGE_CAPTURE = 1
-
     private lateinit var storageRef : StorageReference
     private lateinit var binding: ActivityBuatPengumumanBinding
     private lateinit var urlFoto: Uri
+    private lateinit var fotoPengumumanRef : StorageReference
+    private lateinit var databaseRef : DatabaseReference
+    private lateinit var pengumumanArrayList : ArrayList<Pengumuman>
     private val testParkir = arrayOf(
         "parkir1",
         "parkir2"
@@ -43,6 +48,9 @@ class BuatPengumuman : AppCompatActivity() {
         binding = ActivityBuatPengumumanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         storageRef = Firebase.storage.reference
+        pengumumanArrayList = arrayListOf()
+
+        getListPengumuman()
 
         autoCompleteTextView = binding.autoCompleteTextView
         adapterItem = ArrayAdapter<String>(this, R.layout.item_parkir, testParkir)
@@ -56,6 +64,7 @@ class BuatPengumuman : AppCompatActivity() {
         val takePhoto = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             try {
                 Glide.with(this).load(urlFoto).into(binding.takenPhoto)
+                println(urlFoto)
             } catch (e: Exception) {
                 Toast.makeText(this, "Batal mengambil foto", Toast.LENGTH_SHORT).show()
             }
@@ -69,12 +78,67 @@ class BuatPengumuman : AppCompatActivity() {
 
             takePhoto.launch(urlFoto)
         }
+
+        binding.buatPengumuman.setOnClickListener {
+            fotoPengumumanRef = storageRef.child("images/pengumuman/${urlFoto.lastPathSegment}")
+            databaseRef = Firebase.database.getReference("Pengumuman")
+            val judulPengumuman = binding.judulPengumuman.text.toString()
+            val isiPengumuman = binding.isiPengumuman.text.toString()
+            val uploadTask = fotoPengumumanRef.putFile(urlFoto)
+
+            val currentDate = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+            val formattedDate = currentDate.format(formatter)
+
+            val newId = pengumumanArrayList.size
+
+            var uploadedFotoUri : Uri?
+            uploadTask.continueWithTask { task ->
+                if (!task.isSuccessful){
+                    task.exception?.let{
+                        throw it
+                    }
+                }
+                fotoPengumumanRef.downloadUrl
+            }.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    uploadedFotoUri = task.result
+                    val pengumumanBaru = Pengumuman(
+                        uploadedFotoUri.toString(),
+                        judulPengumuman,
+                        formattedDate,
+                        isiPengumuman,
+                        newId)
+                    databaseRef.child("$newId").setValue(pengumumanBaru).addOnSuccessListener {
+                        Toast.makeText(this, "Pengumuman berhasil dibuat", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun getListPengumuman(){
+        databaseRef = FirebaseDatabase.getInstance().getReference("Pengumuman")
+        databaseRef.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(pengumSnapshot in snapshot.children){
+                        val pengumuman = pengumSnapshot.getValue(Pengumuman::class.java)
+                        pengumumanArrayList.add(pengumuman!!)
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     private fun takenImage() : File{
         return File.createTempFile(
             "IMG_",
-            "jpg",
+            ".jpg",
             getExternalFilesDir(Environment.DIRECTORY_PICTURES))
     }
 }

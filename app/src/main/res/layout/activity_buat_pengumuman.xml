@@ -67,6 +67,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/judulPengumuman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Masukkan Judul Pengumuman"
@@ -92,6 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:gravity="top"
+                    android:id="@+id/isiPengumuman"
                     android:hint="Masukkan pengumuman di sini..."
                     android:layout_marginTop="10dp"
                     android:padding="15dp"
@@ -118,6 +120,7 @@
                     android:src="@drawable/ic_baseline_broken_image_24"/>
 
                 <Button
+                    android:id="@+id/buatPengumuman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="30dp"
