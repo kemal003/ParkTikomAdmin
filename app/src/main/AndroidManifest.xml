@@ -6,6 +6,11 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <!--Permission for camera-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--Permission to vibrate-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,6 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkTikomAdmin">
+        <activity
+            android:name=".ScannerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DetailPengumuman"
+            android:exported="true" />
         <activity
             android:name=".EditKuotaActivity"
             android:exported="true" />
