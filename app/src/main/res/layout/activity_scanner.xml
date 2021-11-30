@@ -19,18 +19,16 @@
             android:id="@+id/camview"
             android:layout_width="match_parent"
             android:background="@drawable/stroke_scanner"
-            android:layout_height="400dp" />
-
-        <!--TextView to display the scanned data-->
-        <ImageView
-            android:id="@+id/idTVscanned"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="bottom"
-            android:src="@drawable/ic_buttonscan"/>
+            android:layout_height="560dp" />
 
     </LinearLayout>
+    <!--TextView to display the scanned data-->
+    <ImageView
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:src="@drawable/ic_buttonscan"/>
 
 
 
