@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -56,6 +57,11 @@ class BuatPengumuman : AppCompatActivity() {
         autoCompleteTextView.setAdapter(adapterItem)
         supportActionBar?.title = "Buat Pengumuman"
         supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onStart() {

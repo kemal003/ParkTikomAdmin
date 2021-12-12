@@ -53,13 +53,12 @@
             android:minHeight="48dp"
             android:textSize="14sp" />
 
-        <Button
+        <ImageView
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:enabled="false"
-            android:textColor="#FFFFFF" />
+            android:src="@drawable/ic_loginbutton"
+            android:enabled="false"/>
 
         <ProgressBar
             android:layout_width="match_parent"
