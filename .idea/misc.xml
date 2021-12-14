@@ -6,8 +6,12 @@
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/drawable/header_drawable.xml" value="0.3828125" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/drawable/rounded_shadow.xml" value="0.22135416666666666" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_buat_pengumuman.xml" value="0.25" />
+        <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_detail_lokasi.xml" value="0.30085470085470084" />
+        <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_edit_kuota.xml" value="0.30085470085470084" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_home.xml" value="0.4363233665559247" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/activity_pilih_lokasi.xml" value="0.5" />
+        <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/detail_lokasi.xml" value="0.30085470085470084" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/fragment_lokasi_parkir.xml" value="0.30085470085470084" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/item_parkir.xml" value="0.30085470085470084" />
         <entry key="..\:/KULIAH/Semester 5/Rekayasa Perangkat Lunak/ParkTikomAdmin/app/src/main/res/layout/pengumuman.xml" value="0.20520833333333333" />
