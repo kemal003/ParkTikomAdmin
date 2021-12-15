@@ -15,11 +15,85 @@
         android:orientation="vertical">
         <!--Frame layout is required as we are using camera view-->
         <!--Below is the scannerliveview which will scan QR code-->
-        <eu.livotov.labs.android.camview.ScannerLiveView
-            android:id="@+id/camview"
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:id="@+id/scn"
             android:layout_width="match_parent"
-            android:background="@drawable/stroke_scanner"
-            android:layout_height="560dp" />
+            android:layout_height="400dp"
+            app:autoFocusButtonColor="@color/white"
+            app:autoFocusButtonVisible="true"
+            app:flashButtonColor="@color/white"
+            app:flashButtonVisible="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/qrScannedCode"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="Testing QR"/>-->
+
+        <LinearLayout
+            android:id="@+id/showData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Pemesan"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/blue"/>
+
+            <TextView
+                android:id="@+id/namaPemesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Farel Sundawa"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Pemesanan"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/blue"/>
+
+            <TextView
+                android:id="@+id/tanggalPemesanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Farel Sundawa"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Token"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/blue"/>
+
+            <TextView
+                android:id="@+id/qrScannedCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Farel Sundawa"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
     <!--TextView to display the scanned data-->

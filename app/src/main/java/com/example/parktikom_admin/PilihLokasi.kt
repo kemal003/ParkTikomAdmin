@@ -12,6 +12,7 @@ import java.io.Serializable
 class PilihLokasi : AppCompatActivity() {
     private lateinit var binding: ActivityPilihLokasiBinding
     private lateinit var databaseRef : DatabaseReference
+    private lateinit var option: String
     private lateinit var lokasi1 : LokasiParkir
     private lateinit var lokasi2 : LokasiParkir
 
@@ -21,7 +22,7 @@ class PilihLokasi : AppCompatActivity() {
         binding = ActivityPilihLokasiBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+        option = intent.getStringExtra("option")!!
         databaseRef = FirebaseDatabase.getInstance().getReference("LokasiParkir")
     }
 
@@ -61,7 +62,7 @@ class PilihLokasi : AppCompatActivity() {
 
 
         binding.parkir1.setOnClickListener {
-            if (intent.getStringExtra("option") == "editKuota"){
+            if (option == "editKuota"){
                 val intent = Intent(this, DetailLokasiActivity::class.java)
                 intent.putExtra("lokPar", "parkir1")
                 intent.putExtra("detailLokasi", lokasi1 as Serializable)
@@ -70,12 +71,13 @@ class PilihLokasi : AppCompatActivity() {
                 val intent = Intent(this, ScannerActivity::class.java)
                 intent.putExtra("lokPar", "parkir1")
                 intent.putExtra("detailLokasi", lokasi1 as Serializable)
+                intent.putExtra("option", option)
                 startActivity(intent)
             }
         }
 
         binding.parkir2.setOnClickListener {
-            if (intent.getStringExtra("option") == "editKuota"){
+            if (option == "editKuota"){
                 val intent = Intent(this, DetailLokasiActivity::class.java)
                 intent.putExtra("lokPar", "parkir2")
                 intent.putExtra("detailLokasi", lokasi2 as Serializable)
@@ -84,6 +86,7 @@ class PilihLokasi : AppCompatActivity() {
                 val intent = Intent(this, ScannerActivity::class.java)
                 intent.putExtra("lokPar", "parkir2")
                 intent.putExtra("detailLokasi", lokasi2 as Serializable)
+                intent.putExtra("option", option)
                 startActivity(intent)
             }
         }

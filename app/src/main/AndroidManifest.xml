@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.parktikom_admin">
 
+    <!-- Permission for camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-<!--    &lt;!&ndash; Permission for camera &ndash;&gt;-->
-<!--    <uses-permission android:name="android.permission.CAMERA" />-->
 <!--    &lt;!&ndash; Permission to vibrate &ndash;&gt;-->
 <!--    <uses-permission android:name="android.permission.VIBRATE" />-->
 

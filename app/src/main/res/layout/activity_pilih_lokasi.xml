@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Parkiran Belakang FILKOM"
+                android:text="Parkiran Depan FILKOM"
                 android:fontFamily="@font/poppins_semibold"
                 android:textSize="15sp"
                 android:textColor="@color/blue003"/>
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Parkiran Depan FILKOM"
+                android:text="Parkiran Belakang FILKOM"
                 android:fontFamily="@font/poppins_semibold"
                 android:textSize="15sp"
                 android:textColor="@color/blue003"/>

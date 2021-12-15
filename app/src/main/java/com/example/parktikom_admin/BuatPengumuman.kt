@@ -1,6 +1,7 @@
 package com.example.parktikom_admin
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,8 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.example.parktikom_admin.databinding.ActivityBuatPengumumanBinding
@@ -49,10 +52,22 @@ class BuatPengumuman : AppCompatActivity() {
         supportActionBar?.title = "Buat Pengumuman"
         supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setupPermission()
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun setupPermission() {
+        val permission = ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            makeRequest()
+        }
+    }
+
+    private fun makeRequest() {
+        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CAMERA), CAMERA_REQ)
     }
 
     override fun onStart() {
@@ -171,5 +186,9 @@ class BuatPengumuman : AppCompatActivity() {
         override fun afterTextChanged(p0: Editable?) {
 
         }
+    }
+
+    companion object {
+        private const val CAMERA_REQ = 101
     }
 }
