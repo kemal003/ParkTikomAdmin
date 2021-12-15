@@ -20,8 +20,9 @@
             android:textStyle="bold"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/fotoEditKuota"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/parkir_belakang" />
 
@@ -37,6 +38,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/deskripsiEditKuota"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
@@ -58,6 +60,7 @@
             android:src="@drawable/motor"/>
 
         <EditText
+            android:id="@+id/terpakaiEdit"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -78,6 +81,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/kuotaEdit"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -111,6 +115,7 @@
             android:src="@drawable/location"/>
 
         <TextView
+            android:id="@+id/lokasiEditKuota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -121,6 +126,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/simpanButtonEditKuota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

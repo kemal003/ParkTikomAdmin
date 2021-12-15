@@ -21,8 +21,9 @@
         android:textStyle="bold"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/gambarDetailParkir"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/parkir_belakang" />
 
@@ -38,6 +39,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/deskripsiLokasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
@@ -59,6 +61,7 @@
             android:src="@drawable/motor"/>
 
         <TextView
+            android:id="@+id/kuotaDetailLokasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -90,6 +93,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/editKuotaParkirButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

@@ -39,6 +39,7 @@
                     android:layout_height="15dp"
                     android:src="@drawable/motor"/>
                 <TextView
+                    android:id="@+id/kuotaParkir1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -104,6 +105,7 @@
                     android:layout_height="15dp"
                     android:src="@drawable/motor"/>
                 <TextView
+                    android:id="@+id/kuotaParkir2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"

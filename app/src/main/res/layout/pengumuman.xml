@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/pengumKlik"
         android:layout_width="220dp"
         android:layout_height="260dp"
         app:cardBackgroundColor="@color/white"

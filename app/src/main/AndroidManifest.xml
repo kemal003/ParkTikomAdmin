@@ -4,9 +4,11 @@
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true" /> <!-- Permission for camera -->
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- Permission to vibrate -->
-    <uses-permission android:name="android.permission.VIBRATE" />
+        android:required="true" />
+<!--    &lt;!&ndash; Permission for camera &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+<!--    &lt;!&ndash; Permission to vibrate &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.VIBRATE" />-->
 
     <application
         android:allowBackup="true"

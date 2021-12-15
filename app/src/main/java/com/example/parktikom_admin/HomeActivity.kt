@@ -1,9 +1,11 @@
 package com.example.parktikom_admin
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parktikom_admin.databinding.ActivityHomeBinding
@@ -44,6 +46,18 @@ class HomeActivity : AppCompatActivity() {
             startActivity(buatPengumuman)
             this.finish()
         }
+
+        binding.editKuota.setOnClickListener {
+            pilihLokasi("editKuota")
+        }
+
+        binding.konfirmasiMasuk.setOnClickListener {
+            pilihLokasi("konfirmasiMasuk")
+        }
+
+        binding.konfirmasiKeluar.setOnClickListener {
+            pilihLokasi("konfirmasiKeluar")
+        }
     }
 
     private fun logOut() {
@@ -60,7 +74,7 @@ class HomeActivity : AppCompatActivity() {
                         val pengumuman = pengumSnapshot.getValue(Pengumuman::class.java)
                         pengumumanArrayList.add(pengumuman!!)
                     }
-                    pengumumanRecyclerView.adapter = AdapterPengumuman(pengumumanArrayList.reversed() as ArrayList<Pengumuman>)
+                    pengumumanRecyclerView.adapter = AdapterPengumuman(applicationContext, pengumumanArrayList.reversed() as ArrayList<Pengumuman>)
                 }
             }
 
@@ -69,5 +83,12 @@ class HomeActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun pilihLokasi(option: String){
+        val intent = Intent(this, PilihLokasi::class.java)
+        intent.putExtra("option", option)
+        startActivity(intent)
+        this.finish()
     }
 }

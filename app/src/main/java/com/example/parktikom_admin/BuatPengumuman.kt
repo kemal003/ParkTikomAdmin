@@ -34,12 +34,6 @@ class BuatPengumuman : AppCompatActivity() {
     private lateinit var fotoPengumumanRef : StorageReference
     private lateinit var databaseRef : DatabaseReference
     private lateinit var pengumumanArrayList : ArrayList<Pengumuman>
-    private val testParkir = arrayOf(
-        "parkir1",
-        "parkir2"
-    )
-    private lateinit var autoCompleteTextView: AutoCompleteTextView
-    private lateinit var adapterItem : ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,9 +46,6 @@ class BuatPengumuman : AppCompatActivity() {
         binding.judulPengumuman.addTextChangedListener(textWatcher)
         binding.isiPengumuman.addTextChangedListener(textWatcher)
 
-        autoCompleteTextView = binding.autoCompleteTextView
-        adapterItem = ArrayAdapter<String>(this, R.layout.item_parkir, testParkir)
-        autoCompleteTextView.setAdapter(adapterItem)
         supportActionBar?.title = "Buat Pengumuman"
         supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -76,6 +67,7 @@ class BuatPengumuman : AppCompatActivity() {
         }
 
         binding.unggahFoto.setOnClickListener {
+            println("=======================MULAI INI GAN==================================")
             urlFoto = FileProvider.getUriForFile(
                 this,
                 "${this.packageName}.provider",

@@ -22,7 +22,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="15dp"
+                android:padding="30dp"
                 android:orientation="vertical"
                 android:background="@color/blue001"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -30,29 +30,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lokasi Parkir:"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Lokasi Parkir:"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:textColor="@color/blue"-->
+<!--                    android:textSize="16sp" />-->
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_shadow"
-                    android:hint="Pilih Lokasi Parkir">
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/rounded_shadow"-->
+<!--                    android:hint="Pilih Lokasi Parkir">-->
 
-                    <AutoCompleteTextView
-                        android:id="@+id/autoCompleteTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:inputType="none" />
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                    <AutoCompleteTextView-->
+<!--                        android:id="@+id/autoCompleteTextView"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:inputType="none" />-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <TextView
                     android:id="@+id/textView2"
