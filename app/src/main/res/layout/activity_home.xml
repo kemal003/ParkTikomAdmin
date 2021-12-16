@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:background="#F2FAFF">
 
-
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="0dp"
@@ -43,118 +42,129 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:padding="15dp"
                     android:background="@drawable/rounded_shadow"
-                    android:orientation="horizontal"
-                    android:paddingBottom="10dp">
-
+                    android:orientation="vertical">
                     <LinearLayout
-                        android:id="@+id/konfirmasiMasuk"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="25dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            app:srcCompat="@drawable/konfirmasi_masuk" />
-
-                        <TextView
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:maxLines="2"
-                            android:text="Konfirmasi Masuk"
-                            android:textAlignment="center"
-                            android:textColor="@color/blue"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/konfirmasiKeluar"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <LinearLayout
+                            android:id="@+id/konfirmasiMasuk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="15dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            app:srcCompat="@drawable/konfirmasi_keluar" />
+                            <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:srcCompat="@drawable/konfirmasi_masuk" />
 
-                        <TextView
-                            android:layout_width="70dp"
+                            <TextView
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:maxLines="2"
+                                android:text="Konfirmasi Masuk"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="12sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/konfirmasiKeluar"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:maxLines="2"
-                            android:text="Konfirmasi Keluar"
-                            android:textAlignment="center"
-                            android:textColor="@color/blue"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
-                    </LinearLayout>
+                            android:layout_marginHorizontal="15dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
+                            <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:srcCompat="@drawable/konfirmasi_keluar" />
+
+                            <TextView
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:maxLines="2"
+                                android:text="Konfirmasi Keluar"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="12sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
+                    </LinearLayout>
                     <LinearLayout
-                        android:id="@+id/editKuota"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center">
+                        <LinearLayout
+                            android:id="@+id/editKuota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="15dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            app:srcCompat="@drawable/edit_kuota" />
+                            <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:srcCompat="@drawable/edit_kuota" />
 
-                        <TextView
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:maxLines="2"
-                            android:text="Edit Kuota Parkir"
-                            android:textAlignment="center"
-                            android:textColor="@color/blue"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
+                            <TextView
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:maxLines="2"
+                                android:text="Edit Kuota Parkir"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="12sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buatPengumuman"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="15dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:srcCompat="@drawable/buat_pengumuman" />
+
+                            <TextView
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:breakStrategy="simple"
+                                android:fontFamily="@font/poppins_regular"
+                                android:maxLines="2"
+                                android:text="Buat Pengumuman"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="12sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/buatPengumuman"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            app:srcCompat="@drawable/buat_pengumuman" />
 
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:breakStrategy="simple"
-                            android:fontFamily="@font/poppins_regular"
-                            android:maxLines="2"
-                            android:text="Buat Pengumuman"
-                            android:textAlignment="center"
-                            android:textColor="@color/blue"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
-                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -164,7 +174,7 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:paddingHorizontal="15dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -176,10 +186,10 @@
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="24dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Pengumuman Parkiran"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textColor="@color/blue" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -193,14 +203,13 @@
                 android:id="@+id/logoutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/ic_buttonlogout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.021" />
 
             <TextView
                 android:id="@+id/textView"

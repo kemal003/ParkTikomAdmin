@@ -18,7 +18,7 @@
         <com.budiyev.android.codescanner.CodeScannerView
             android:id="@+id/scn"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="360dp"
             app:autoFocusButtonColor="@color/white"
             app:autoFocusButtonVisible="true"
             app:flashButtonColor="@color/white"
@@ -102,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:src="@drawable/ic_buttonscan"/>
+        android:src="@drawable/ic_confirmbutton"/>
 
 
 

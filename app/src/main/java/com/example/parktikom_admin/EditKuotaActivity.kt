@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import com.bumptech.glide.Glide
 import com.example.parktikom_admin.databinding.ActivityEditKuotaBinding
 import com.google.firebase.database.DatabaseReference
@@ -19,6 +20,8 @@ class EditKuotaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditKuotaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.title = "Edit Kuota Parkir"
+        supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         lokPar = intent.getStringExtra("lokPar").toString()

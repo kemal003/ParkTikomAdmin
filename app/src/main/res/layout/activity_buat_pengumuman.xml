@@ -22,7 +22,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="30dp"
+                android:paddingHorizontal="15dp"
                 android:orientation="vertical"
                 android:background="@color/blue001"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:text="Judul Pengumuman:"
                     android:textColor="@color/blue"
                     android:textSize="16sp" />
@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Masukkan Judul Pengumuman"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:scrollbarStyle="insideInset"
@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Isi Pengumuman:"
                     android:textColor="@color/blue"
                     android:textSize="16sp" />
@@ -92,8 +92,8 @@
                     android:layout_height="200dp"
                     android:gravity="top"
                     android:id="@+id/isiPengumuman"
-                    android:hint="Masukkan pengumuman di sini..."
-                    android:layout_marginTop="10dp"
+                    android:hint="Masukkan Isi Pengumuman"
+                    android:layout_marginTop="5dp"
                     android:padding="15dp"
                     android:scrollbarStyle="insideInset"
                     android:scrollbars="vertical"
@@ -104,21 +104,23 @@
                 <Button
                     android:id="@+id/unggahFoto"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:text="Unggah Foto"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="Tambah Foto"
+                    android:textStyle="bold"
                     android:textAllCaps="false"
                     android:fontFamily="@font/poppins_regular"
                     android:enabled="false"
                     android:textColor="@color/white"
-                    android:background="@drawable/gradient"/>
+                    android:background="@drawable/button"/>
 
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="140dp"
+                    android:padding="5dp"
                     android:background="@drawable/rounded_shadow"
                     android:id="@+id/takenPhoto"
                     android:src="@drawable/ic_baseline_broken_image_24"/>

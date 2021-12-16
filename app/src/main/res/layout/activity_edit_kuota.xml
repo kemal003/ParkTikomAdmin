@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:padding="15dp"
+    android:background="@color/blue001"
     tools:context=".EditKuotaActivity">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_regular"
             android:text="Detail Lokasi Parkir"
             android:textAlignment="center"
@@ -30,12 +30,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Deskripsi :"
             android:textAlignment="textStart"
             android:textColor="@color/blue003"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/deskripsiEditKuota"
@@ -54,14 +53,14 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/motor"/>
 
         <EditText
             android:id="@+id/terpakaiEdit"
-            android:layout_width="40dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:padding="10dp"
@@ -82,7 +81,7 @@
 
         <EditText
             android:id="@+id/kuotaEdit"
-            android:layout_width="40dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:padding="10dp"
@@ -98,7 +97,8 @@
             android:text="Motor"
             android:textAlignment="center"
             android:textColor="@color/blue003"
-            android:textStyle="bold" />
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -109,8 +109,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/location"/>
 
@@ -121,7 +121,8 @@
             android:layout_marginStart="15dp"
             android:text="Jl. UB 10"
             android:textColor="@color/blue003"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"/>
 
     </LinearLayout>
 

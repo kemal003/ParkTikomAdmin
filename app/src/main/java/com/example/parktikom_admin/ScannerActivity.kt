@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.AutoFocusMode
@@ -35,14 +36,28 @@ class ScannerActivity : AppCompatActivity() {
         binding = ActivityScannerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
 
         databaseReferenceToken = FirebaseDatabase.getInstance().getReference("Token")
         databaseReferenceUser = FirebaseDatabase.getInstance().getReference("Users")
         databaseReferenceLokasiParkir = FirebaseDatabase.getInstance().getReference("LokasiParkir")
         option = intent.getStringExtra("option")!!
         lokPar = intent.getStringExtra("lokPar")!!
+        when(option) {
+            "konfirmasiMasuk" -> {
+                supportActionBar?.title = "Konfirmasi Masuk"
+            }
+            "konfirmasiKeluar" -> {
+                supportActionBar?.title = "Konfirmasi Keluar"
+            }
+        }
         setupPermission()
         codeScanner()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onStart() {
@@ -61,6 +76,7 @@ class ScannerActivity : AppCompatActivity() {
                     databaseReferenceToken.child(code).child("checkedIn").setValue(true).addOnSuccessListener {
                         Toast.makeText(this, "Berhasil Masuk!", Toast.LENGTH_SHORT).show()
                     }
+
                 }
                 "konfirmasiKeluar" -> {
                     databaseReferenceLokasiParkir.child(lokPar).child("terpakai").get().addOnSuccessListener {
@@ -158,11 +174,6 @@ class ScannerActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 
     companion object {

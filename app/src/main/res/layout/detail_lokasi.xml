@@ -12,13 +12,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Detail Lokasi Parkir"
         android:textAlignment="center"
         android:textColor="@color/blue003"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textSize="20sp"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -30,12 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/poppins_regular"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Deskripsi :"
         android:textAlignment="textStart"
         android:textColor="@color/blue003"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textSize="17sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +42,7 @@
         android:text="Parkiran Belakang FILKOM ini terletak di belakang Gedung A dan biasa digunakan oleh mahasiswa."
         android:textAlignment="textStart"
         android:textColor="@color/blue003"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,7 +51,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:src="@drawable/motor"/>
@@ -63,8 +61,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="10 / 50 Motor"
+            android:textSize="15sp"
             android:textColor="@color/blue003"
-            android:textStyle="bold" />
+            android:fontFamily="@font/poppins_regular"/>
 
     </LinearLayout>
 
@@ -75,8 +74,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/location"/>
 
         <TextView
@@ -84,8 +83,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="Jl. UB 10"
+            android:textSize="15sp"
             android:textColor="@color/blue003"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/poppins_regular"/>
 
     </LinearLayout>
 

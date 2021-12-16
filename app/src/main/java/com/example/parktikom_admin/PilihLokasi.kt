@@ -22,6 +22,9 @@ class PilihLokasi : AppCompatActivity() {
         binding = ActivityPilihLokasiBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        supportActionBar?.title = "Pilih Lokasi Parkir"
+        supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
         option = intent.getStringExtra("option")!!
         databaseRef = FirebaseDatabase.getInstance().getReference("LokasiParkir")
     }
@@ -30,12 +33,6 @@ class PilihLokasi : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-        binding = ActivityPilihLokasiBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        databaseRef = FirebaseDatabase.getInstance().getReference("LokasiParkir")
-
-        supportActionBar?.title = "Pilih Lokasi Parkir"
-        supportActionBar?.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.header_drawable))
     }
 
     override fun onStart() {
