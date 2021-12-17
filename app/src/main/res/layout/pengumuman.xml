@@ -8,8 +8,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/pengumKlik"
-        android:layout_width="240dp"
-        android:layout_height="230dp"
+        android:layout_width="220dp"
+        android:layout_height="260dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
@@ -41,7 +41,7 @@
                 android:maxLines="2"
                 android:text="@string/informasi_lokasi_parkir_selama_pkk_maba_filkom_ub"
                 android:textColor="@color/blue"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tanggal"

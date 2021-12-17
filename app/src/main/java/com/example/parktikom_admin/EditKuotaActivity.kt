@@ -55,5 +55,4 @@ class EditKuotaActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
-
 }

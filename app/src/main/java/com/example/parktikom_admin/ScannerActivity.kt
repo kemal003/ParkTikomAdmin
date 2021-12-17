@@ -17,6 +17,7 @@ import com.budiyev.android.codescanner.ScanMode
 import com.example.parktikom_admin.databinding.ActivityScannerBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.lang.Exception
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
@@ -63,31 +64,58 @@ class ScannerActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         binding.btnScan.setOnClickListener {
-            val code = binding.qrScannedCode.text.toString()
-            when(option){
-                "konfirmasiMasuk" -> {
-                    databaseReferenceToken.child(code).child("endTime").get().addOnSuccessListener {
-                        val endTime = LocalTime.parse(it.value.toString(), DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
-                        if (LocalTime.now().isAfter(endTime)){
-                            Toast.makeText(this, "Maaf, token sudah kedaluarsa", Toast.LENGTH_SHORT).show()
-                            databaseReferenceToken.child(code).removeValue()
+            try {
+                var lolos = false
+                val code = binding.qrScannedCode.text.toString()
+                when(option){
+                    "konfirmasiMasuk" -> {
+                        databaseReferenceToken.child(code).get().addOnSuccessListener {
+                            val getEndTime = it.child("endTime").value.toString().split(":")
+                            val getStartTime = it.child("startTime").value.toString().split(":")
+                            var startHour = getStartTime[0]
+                            val startMinute = getStartTime[1]
+                            var endHour = getEndTime[0]
+                            val endMinute = getEndTime[1]
+                            var startAmpm = "AM"
+                            var endAmpm = "AM"
+                            if (endHour.toInt() >= 12) {
+                                endAmpm = "PM"
+                                endHour = (endHour.toInt() - 12).toString()
+                            }
+                            if (startHour.toInt() >= 12){
+                                startAmpm = "PM"
+                                startHour = (startHour.toInt() - 12).toString()
+                            }
+                            val fixStartTime = "$startHour:$startMinute $startAmpm"
+                            val fixEndTime = "$endHour:$endMinute $endAmpm"
+                            val startTime = LocalTime.parse(fixStartTime, DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
+                            val endTime = LocalTime.parse(fixEndTime, DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
+                            if (LocalTime.now().isAfter(endTime)){
+                                Toast.makeText(this, "Maaf, token sudah kedaluarsa", Toast.LENGTH_SHORT).show()
+                                databaseReferenceToken.child(code).removeValue()
+                            } else if (LocalTime.now().isBefore(startTime)){
+                                Toast.makeText(this, "Token masih belum aktif", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        if (lolos){
+                            databaseReferenceToken.child(code).child("checkedIn").setValue(true).addOnSuccessListener {
+                                Toast.makeText(this, "Berhasil Masuk!", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
-                    databaseReferenceToken.child(code).child("checkedIn").setValue(true).addOnSuccessListener {
-                        Toast.makeText(this, "Berhasil Masuk!", Toast.LENGTH_SHORT).show()
-                    }
-
-                }
-                "konfirmasiKeluar" -> {
-                    databaseReferenceLokasiParkir.child(lokPar).child("terpakai").get().addOnSuccessListener {
-                        val nowTerpakai = it.value.toString().toLong()
-                        val updatedTerpakai : Long = nowTerpakai - 1
-                        databaseReferenceLokasiParkir.child(lokPar).child("terpakai").setValue(updatedTerpakai)
-                    }
-                    databaseReferenceToken.child(code).removeValue().addOnSuccessListener {
-                        Toast.makeText(this, "Berhasil Keluar!", Toast.LENGTH_SHORT).show()
+                    "konfirmasiKeluar" -> {
+                        databaseReferenceLokasiParkir.child(lokPar).child("terpakai").get().addOnSuccessListener {
+                            val nowTerpakai = it.value.toString().toLong()
+                            val updatedTerpakai : Long = nowTerpakai - 1
+                            databaseReferenceLokasiParkir.child(lokPar).child("terpakai").setValue(updatedTerpakai)
+                        }
+                        databaseReferenceToken.child(code).removeValue().addOnSuccessListener {
+                            Toast.makeText(this, "Berhasil Keluar!", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
+            } catch (e: Exception){
+                Toast.makeText(this, "Token Salah", Toast.LENGTH_SHORT).show()
             }
         }
     }
